@@ -41,14 +41,14 @@ fun UserComposeView() {
 }
 
 @Composable
-fun CompanyNameView(companydetails : Companydetails ){
+fun CompanyNameView(companydetails : Post){
     Card(
         modifier = Modifier.fillMaxWidth(),
         elevation = CardDefaults.cardElevation(defaultElevation = 2.dp)
     ) {
         Column(modifier = Modifier.padding(12.dp)) {
-            Text(text = companydetails.address.website, fontSize = 18.sp)
-            Text(text = companydetails.address.company.name, fontSize = 18.sp)
+            Text(text = companydetails.title, fontSize = 18.sp)
+            Text(text = companydetails.userId.toString(), fontSize = 18.sp)
         }
     }
 }
