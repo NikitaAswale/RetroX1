@@ -14,13 +14,23 @@ class UserViewModel : ViewModel(){
     private val _users = MutableStateFlow<List<User>>(emptyList())
     val users: StateFlow<List<User>> = _users.asStateFlow()
 
+    private val _companyname = MutableStateFlow<List<Companydetails>>(emptyList())
+    val companyname : StateFlow<List<Companydetails>> = _companyname.asStateFlow()
+
     init {
         getUsers()
+        getCompanyName()
     }
 
     fun getUsers(){
         viewModelScope.launch {
             _users.value = userRepository.getUsers()
+        }
+    }
+
+    fun getCompanyName(){
+        viewModelScope.launch {
+            _companyname.value = userRepository.getCompanyName()
         }
     }
 }

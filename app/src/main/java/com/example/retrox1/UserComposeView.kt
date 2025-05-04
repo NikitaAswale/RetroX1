@@ -25,6 +25,7 @@ fun UserComposeView() {
 
     val userviewmodel : UserViewModel = viewModel()
     val userlist = userviewmodel.users.collectAsState().value
+    val companynamelist = userviewmodel.companyname.collectAsState().value
     LazyColumn(
         modifier = Modifier
             .fillMaxSize()
@@ -32,21 +33,22 @@ fun UserComposeView() {
         contentPadding = PaddingValues(8.dp),
         verticalArrangement = Arrangement.spacedBy(8.dp),
         content = {
-            itemsIndexed(userlist){ index, user ->
-                UserView(user)
+            itemsIndexed(companynamelist){ index, companydetails ->
+                CompanyNameView(companydetails)
             }
         }
     )
 }
 
 @Composable
-fun UserView(user : User){
+fun CompanyNameView(companydetails : Companydetails ){
     Card(
         modifier = Modifier.fillMaxWidth(),
         elevation = CardDefaults.cardElevation(defaultElevation = 2.dp)
     ) {
         Column(modifier = Modifier.padding(12.dp)) {
-            Text(text = user.name, fontSize = 18.sp)
+            Text(text = companydetails.address.website, fontSize = 18.sp)
+            Text(text = companydetails.address.company.name, fontSize = 18.sp)
         }
     }
 }
