@@ -13,8 +13,7 @@ class APIService {
     val userServices = retrofit.create(ApiServices::class.java)
 
     interface ApiServices {
-
         @GET("/users")
-        fun getUsers(): List<User>
+        suspend fun getUsers(): List<User>
     }
 }
