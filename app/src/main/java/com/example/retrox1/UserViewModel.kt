@@ -14,8 +14,8 @@ class UserViewModel : ViewModel(){
     private val _users = MutableStateFlow<List<User>>(emptyList())
     val users: StateFlow<List<User>> = _users.asStateFlow()
 
-    private val _companyname = MutableStateFlow<List<Companydetails>>(emptyList())
-    val companyname : StateFlow<List<Companydetails>> = _companyname.asStateFlow()
+    private val _companyname = MutableStateFlow<List<Post>>(emptyList())
+    val companyname : StateFlow<List<Post>> = _companyname.asStateFlow()
 
     init {
         getUsers()

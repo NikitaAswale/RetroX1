@@ -8,7 +8,7 @@ class Userrepository {
        return apiService.userServices.getUsers()
     }
 
-    suspend fun getCompanyName() : List<Companydetails>{
+    suspend fun getCompanyName() : List<Post>{
         return apiService.userServices.getCompanyName()
     }
 }

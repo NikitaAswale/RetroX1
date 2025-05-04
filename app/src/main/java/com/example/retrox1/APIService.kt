@@ -16,6 +16,6 @@ class APIService {
         @GET("/users")
         suspend fun getUsers(): List<User>
         @GET("/posts")
-        suspend fun getCompanyName() : List<Companydetails>
+        suspend fun getCompanyName() : List<Post>
     }
 }
